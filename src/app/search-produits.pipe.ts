@@ -8,8 +8,7 @@ export class SearchProduitsPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     if(!value) return value;
     if(!args) return value;
-    //console.log(args);
-    console.log(value);
+  
     args = args.toLowerCase();
 
     return value.filter((item: any)=>{
