@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import {ApiService} from '../api.service';
 import { Produit } from '../models/produit';
-import { SearchProduitsPipe } from '../search-produits.pipe';
-
 
 
 @Component({
@@ -13,7 +11,7 @@ import { SearchProduitsPipe } from '../search-produits.pipe';
 })
 export class ListeComponent{
     produits : Observable<Produit[]> 
-   searchText = '';
+    searchText = '';
     constructor(private apiService : ApiService) {}
   ngOnInit(){
     this.produits = this.apiService.getProduits ();

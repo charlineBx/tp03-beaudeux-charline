@@ -6,12 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchProduitsPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if(!value) return null;
+    if(!value) return value;
     if(!args) return value;
-
+    //console.log(args);
+    console.log(value);
     args = args.toLowerCase();
 
-    return value.filter((item:any)=>{
+    return value.filter((item: any)=>{
       return JSON.stringify(item).toLowerCase().includes(args);
     })
   }
