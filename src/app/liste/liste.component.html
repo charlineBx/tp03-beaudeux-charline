@@ -1,0 +1,14 @@
+Chercher par nom de produit : 
+<div>
+    <input type="text" [(ngModel)]="searchText" placeholder=" chercher un produit  ">
+</div>
+
+<table style="border:1">
+    <tr>
+        <th>Nom</th>
+    </tr>
+    <tr *ngFor="let item of produits | searchProduits : searchText | async ">
+    <td>{{item.nom}} </td> 
+    </tr>
+    
+</table>
